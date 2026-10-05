@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f5f4ef;
+  --surface: #ffffff;
+  --surface-2: #eeece4;
+  --ink: #1b2a28;
+  --ink-soft: #5b6b68;
+  --line: #dedbd0;
+  --primary: #0f6e62;
+  --primary-ink: #ffffff;
+  --primary-soft: #d9efe9;
+  --gold: #8a5a14;
+  --gold-soft: #fbefd3;
+  --danger: #b42318;
+  --danger-soft: #fde4e1;
+  --ok: #146c3e;
+  --ok-soft: #dcf3e5;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-primary: var(--primary);
+  --color-primary-ink: var(--primary-ink);
+  --color-primary-soft: var(--primary-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --font-sans: var(--font-arabic), var(--font-latin), system-ui, sans-serif;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* numbers stay left-to-right and tabular inside RTL text */
+.num {
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-variant-numeric: tabular-nums;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+}
+
+@media print {
+  @page {
+    margin: 14mm;
+  }
+  details > summary {
+    display: none;
+  }
+  details {
+    display: block;
+  }
+  details[open] > *:not(summary),
+  details > *:not(summary) {
+    display: block;
+  }
+}

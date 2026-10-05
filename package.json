@@ -1,0 +1,47 @@
+{
+  "name": "family-finance-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "vitest run",
+    "format": "prettier --write .",
+    "migrate": "tsx scripts/migrate.ts",
+    "create-owner": "tsx scripts/create-owner.ts",
+    "seed:dev": "tsx scripts/seed-dev.ts",
+    "e2e": "playwright test",
+    "restore": "tsx scripts/restore.ts",
+    "check:bundle": "node scripts/check-bundle.mjs",
+    "smoke:prod": "playwright test -c playwright.prod.config.ts"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "exceljs": "^4.4.0",
+    "next": "16.3.8",
+    "next-intl": "^4.14.9",
+    "pg": "^8.23.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite-socket": "^0.2.11",
+    "@playwright/test": "^1.63.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^22.20.5",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.8",
+    "prettier": "^3.9.9",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^5.0.3"
+  }
+}
